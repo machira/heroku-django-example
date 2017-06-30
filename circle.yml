@@ -1,5 +1,6 @@
 deployment:
   production:
     branch: master
-    heroku:
-      appname: fierce-hamlet-51836
+    commands:
+      - ./heroku_deploy.sh:
+          timeout: 300
