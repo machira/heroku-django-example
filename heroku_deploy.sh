@@ -3,7 +3,7 @@ APP_NAME=fierce-hamlet-51836
 
 git remote add heroku git@heroku.com:$APP_NAME.git
 git fetch heroku
-MIGRATION_CHANGES=$(git diff HEAD heroku/master --name-only -- db | wc -l)
+MIGRATION_CHANGES=$(git diff HEAD heroku/master --name-only -- */migrations/* | wc -l)
 echo "$MIGRATION_CHANGES db changes."
 
 PREV_WORKERS=$(heroku ps --app $APP_NAME | grep "^worker." | wc -l | tr -d ' ')
