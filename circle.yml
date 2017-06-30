@@ -1,0 +1,5 @@
+deployment:
+  production:
+    branch: master
+    heroku:
+      appname: fierce-hamlet-51836
